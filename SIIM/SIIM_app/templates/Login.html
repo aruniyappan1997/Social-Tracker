@@ -1,18 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
-<body>
-    <form method="post">
-        {% csrf_token %}
-        <label>Username :</label>
-        <input type="text" name="username">
-        <label>Password :</label>
-        <input type="password" name="username">
-        <input type="submit" value="Login">
-    </form>
-</body>
-</html>
+{% extends 'Base.html' %}
+
+{% block title %}
+Login Page
+{%endblock%}
+
+{% block content %}
+<form action="{% url 'home'%}" method="post">
+    {% csrf_token %}
+    <label>Username :</label>
+    <input type="text" name="username">
+    <label>Password :</label>
+    <input type="password" name="username">
+    <input type="submit" value="Login">
+</form>
+
+{% endblock %}

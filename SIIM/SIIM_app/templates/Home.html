@@ -5,11 +5,13 @@ Home Page
 {%endblock%}
 
 {% block content %}
+<h1>Welcome to Home page, {{context.username}}</h1>
+<a href="{% url 'Logout' %}"><button style="text-decoration:none" type="submit">Sign-out</button></a>
 {% if messages %}
+<p class="msg">
     {% for message in messages %}
         {{message}}
     {% endfor %}
+</p>
 {% endif %}
-<h1>Welcome to Home page, {{context.username}}</h1>
-<a href="{% url 'Logout' %}"><button style="text-decoration:none" type="submit">Sign-out</button></a>
 {% endblock %}
